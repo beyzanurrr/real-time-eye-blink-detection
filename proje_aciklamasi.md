@@ -1,0 +1,9 @@
+# Otomatik Göz Kırpma Tespiti Proje Açıklaması
+
+Bu projede yüz görüntülerinden göz kırpma hareketlerini otomatik olarak tespit eden bir görüntü işleme sistemi geliştirilmiştir. Sistem, kamera veya video kaynağından alınan görüntüler üzerinde yüz tespiti yapmakta, tespit edilen yüz bölgesi üzerinde facial landmarks detection yöntemiyle göz çevresindeki karakteristik noktaları çıkarmakta ve bu noktalar üzerinden gözün açık ya da kapalı olma durumunu analiz etmektedir.
+
+Projede yüz tespiti için Dlib kütüphanesi kullanılmıştır. CNN tabanlı yüz dedektörü sayesinde görüntü içerisindeki yüz bölgesi belirlenir. Ardından Dlib’in 68 noktalı facial landmark modeli kullanılarak göz, burun, ağız ve yüz çevresine ait referans noktaları elde edilir. Göz kırpma tespiti için özellikle sağ ve sol göze ait altışar landmark noktası kullanılmaktadır.
+
+Göz kırpma hareketinin belirlenmesinde Eye Aspect Ratio (EAR) yöntemi uygulanmıştır. EAR değeri, göz çevresindeki dikey ve yatay uzaklıkların oranlanmasıyla hesaplanır. Göz açıkken dikey uzaklıklar daha büyük olduğu için EAR değeri yüksek olur. Göz kapandığında dikey uzaklıklar azalır ve EAR değeri belirgin şekilde düşer. Sistem, EAR değerinin belirlenen eşik değerinin altına düşmesini göz kapanması olarak değerlendirir. Bu durum belirli sayıda ardışık kare boyunca devam ettiğinde göz kırpma hareketi olarak sayılır.
+
+Geliştirilen arayüzde kullanıcı kamera başlatabilir, video dosyası seçebilir, göz kırpma sayısını takip edebilir, anlık EAR değerini görüntüleyebilir ve eşik değerlerini değiştirebilir. Bu sayede uygulama hem gerçek zamanlı kamera görüntüleriyle hem de önceden kaydedilmiş videolarla test edilebilir. Proje; yorgunluk algılama sistemleri, sürücü güvenliği uygulamaları ve psikolojik araştırmalarda dikkat veya uyanıklık düzeyinin analiz edilmesi gibi alanlarda kullanılabilecek temel bir sistem sunmaktadır.
