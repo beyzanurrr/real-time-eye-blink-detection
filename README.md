@@ -180,35 +180,30 @@ python app.py
 
 # 📸 Screenshots
 
-## Main Interface
+## Application Interface
 
-_Add screenshot here._
+The main graphical user interface allows users to start the webcam or select a video, adjust detection parameters, and monitor blink statistics in real time.
 
-```markdown
-![Main Interface](screenshots/main-interface.png)
-```
+![Application Interface](screenshots/interface.png)
 
----
+## Eye Open Detection
 
-## Blink Detection
+The system successfully detects the user's face and continuously monitors the eye status. The Eye Aspect Ratio (EAR), blink count, and current eye state are displayed in real time.
 
-_Add screenshot here._
+![Eye Open Detection](screenshots/eyes-open.png)
 
-```markdown
-![Blink Detection](screenshots/blink-counter.png)
-```
+## Eye Closed Detection
 
----
+When the eyes are closed, the Eye Aspect Ratio decreases below the predefined threshold. The application identifies the eye state as closed while continuing to monitor the duration of closure.
 
-## Warning Screen
+![Eye Closed Detection](screenshots/eyes-closed.png)
 
-_Add screenshot here._
+## Drowsiness Warning
 
-```markdown
-![Warning Screen](screenshots/warning-screen.png)
-```
+If the eyes remain closed for a predefined duration, the application detects prolonged eye closure and immediately activates both a visual warning message and an audible alarm to alert the user.
 
----
+![Drowsiness Warning](screenshots/drowsiness-warning.png)
+
 
 # 📦 Model File
 
